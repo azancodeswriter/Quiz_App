@@ -1,0 +1,53 @@
+from questions import questions
+
+
+print("          ... WELLCOME TO QUIZ APP ...          ")
+print()
+QA = input("     Do you want to play the game (yes/no) : ")
+Score = 0
+
+if QA.lower() == "yes":
+    print()
+    print("                 LET'S START                ")
+    for q in questions:
+        print(q["question"])
+        print()
+        for opt in q["options"]:
+            print(opt)
+        print()    
+        ans = input(" choose an option (A/B/C/D) : ")
+        if ans.lower() == q["answer"]:
+            print()
+            print("            ... CORRECT ...           ")
+            Score += 5
+        else:
+            print()
+            print("          ... WRONG ANSWER ...         ")
+        print()    
+        QA1 = input("   Do you want to play more (yes/no) : ")
+        if QA1.lower() == "yes":
+            print()
+        elif QA1.lower() == "no":
+            break
+        else:
+            print()
+            print("             INVALID INPUT           ")
+            break
+        
+    if Score >= 75:
+        print()
+        print(f"     Welldone you have scored {Score}    ")
+    else: 
+        print()
+        print(f"     You are fail , your score is {Score}    ")
+
+
+elif QA.lower() == "no": 
+    print("           Ok thanks for using it ...        ")   
+
+else: 
+    print("             INVALID INPUT           ")
+
+
+
+
